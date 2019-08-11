@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 // Simple Component example.
 const TableHeader = () => {
@@ -16,11 +16,12 @@ const TableHeader = () => {
 // Cannot change props - they're read-only. Using state allows us to modify stuff...
 const TableBody = props => {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-  const rows = props.strategyList.map((row, index) => { // (current value, current index)
+  const rows = props.strategyList.map((row, index) => {
+    // (current value, current index)
     return (
       <tr key={index}>
         <td>{row.name}</td>
-        <td>{row.class}</td>
+        <td>{row.className}</td>
         <td>
           <button onClick={() => props.removeStrategy(index)}>Delete</button>
         </td>

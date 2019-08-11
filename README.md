@@ -1,6 +1,6 @@
 # React Learning
 
-A sample app for learning React.
+A sample app for learning React based on the excellent [tutorial](https://www.taniarascia.com/getting-started-with-react/) by Tania Rascia.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -73,4 +73,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 # Credits
 
-This app was based on the excellent [tutorial](https://www.taniarascia.com/getting-started-with-react/) by Tania Rascia.
+1. A beginner's React [tutorial](https://www.taniarascia.com/getting-started-with-react/) by Tania Rascia.

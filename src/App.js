@@ -1,25 +1,26 @@
-import React, { Component } from "react";
-import Table from "./Table";
+import React, { Component } from 'react';
+import Table from './Table';
+import Form from './Form';
 
 class App extends Component {
   state = {
     strategies: [
       {
-        name: "EMA",
-        class: "com.strategies.Ema.java"
+        name: 'EMA',
+        className: 'com.strategies.Ema.java'
       },
       {
-        name: "Scalper",
-        class: "com.strategies.Scalper.java"
+        name: 'Scalper',
+        className: 'com.strategies.Scalper.java'
       },
       {
-        name: "MACD",
-        class: "com.strategies.Macd.java"
+        name: 'MACD',
+        className: 'com.strategies.Macd.java'
       }
     ]
-  }
+  };
 
-  removeStrategy = (index) => {
+  removeStrategy = index => {
     // ES6 property shorthand to create a variable that contains this.state.strategies
     const { strategies } = this.state;
 
@@ -29,16 +30,24 @@ class App extends Component {
       // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
       strategies: strategies.filter((strategy, i) => {
         return i !== index; // return non matching indexes, does not mutate, returns new array/copy
-      }),
-    })
-  }
+      })
+    });
+  };
+
+  // Will update the state by taking the existing this.state.strategies and
+  // adding the new strategy parameter, using the ES6 spread operator.
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+  handleSubmit = strategy => {
+    this.setState({ strategies: [...this.state.strategies, strategy] });
+  };
 
   render() {
-    const { strategies } = this.state;    
+    const { strategies } = this.state;
     return (
       <div className="container">
         <h1>Trading Strategies</h1>
         <Table strategies={strategies} removeStrategy={this.removeStrategy} />
+        <Form handleSubmit={this.handleSubmit} />
       </div>
     );
   }
